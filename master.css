@@ -1,0 +1,110 @@
+.title-container {
+    padding:0;
+    height: auto;
+    width: auto;
+    border: none;
+    
+  }
+  
+  .title {
+    grid-area: nav-header;
+    background-color: transparent;
+    padding: 0;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    font-family: "Snell Roundhand";
+    font-weight: normal;
+    font-size: 60px;
+    text-align: center;
+  
+  }
+  
+  .center {
+    border: ;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+  
+  .block {
+    padding: 10px;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+  }
+  
+  .b1 {
+    grid-area: b1g;
+    background-color: blue;
+    padding: 10px;
+  }
+  
+  .b2 {
+    grid-area: b2g;
+    background-color: green;
+    padding: 10px;
+  }
+  
+  .b3 {
+    grid-area: b3g;
+    background-color: red;
+    padding: 10px;
+  }
+  .b4 {
+    grid-area: b4g;
+    background-color: orange;
+    padding: 10px;
+  }
+  .b5 {
+    grid-area: b5g;
+    background-color: purple;
+    padding: 10px;
+  }
+  
+  .my-page-footer {
+    grid-area: foot;
+    background-color: yellow;
+    padding: 10px;
+  }
+  
+  .my-page {
+    display: grid;
+    grid-template-areas:
+      "links links links links links"
+      "b1g   b2g   b2g   b2g   b3g"
+      "b4g   b5g   b5g   b5g   b5g"
+      ".     .    foot   .     . ";
+  }
+  
+  
+  
+  .nav-links {
+    grid-area: links;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    border: 3px solid black;
+    margin: 0;
+    padding: 30px;
+  }
+  
+  .section-link {
+    color: black;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Futura";
+    color: #666;
+  }
+  
+  .section-link:hover {
+    text-decoration: underline;
+  }
+  
+  h2 {
+      font-size: 30px;
+    text-align: center;
+    font-weight: normal;
+    font-style: italic;
+  }
