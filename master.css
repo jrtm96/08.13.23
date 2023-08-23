@@ -108,3 +108,11 @@
     font-weight: normal;
     font-style: italic;
   }
+
+/* for JSTests.html */
+
+.color-box {
+  background-color: limegreen;
+  width: 100px;
+  height: 100px;
+}

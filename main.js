@@ -86,8 +86,33 @@ const residence = 'city';
 console.log(person);
 console.log(person.name); //OPTIMAL
 console.log(person["name"]); // CAN BE USED BUT NOT OPTIMAL
-console.log(`${person.name} is from ${person.city}, ${person.state}. He loves ${person.favoriteFood} and Tacos! if he could have any amount of Tacos right now, he would have ${person.numberOfTacosWanted}. True or false. Does ${person.name} want 1 Million Dollars? ${person.name} says: \"${person.wantsOneMillionDollars}\"`
+console.log(`${person.name} is from ${person.city}, ${person.state}. He loves ${person.favoriteFood} and Tacos! if he could have any amount of Tacos right now, he would have ${person.numberOfTacosWanted}. True. Does ${person.name} want 1 Million Dollars? ${person.name} says: \"${person.wantsOneMillionDollars}\"`
 );
 
 console.log(`${person.residence} lives at`);
 console.log(person.residence);
+
+const elementsToChange = document.querySelectorAll(".js-target");
+for (let i = 0; i < elementsToChange.length; i++) {
+  const currentElement = elementsToChange[i];
+  currentElement.innerText = "Modified by JavaScript!";
+};
+
+const button = document.querySelector(".event-button");
+button.addEventListener("click", function(){alert("Hey There!");});
+
+const input = document.querySelector(".input-to-copy");
+const paragraph = document.querySelector(".p-to-copy-to");
+input.addEventListener("keyup", function() {
+    paragraph.innerText = input.value;
+});
+
+const colInput = document.querySelector(".color-input");
+const colPara = document.querySelector(".color-box");
+input.addEventListener("change", function(){
+    colPara.style.backgroundColor = colInput.value;
+});
+
+document.querySelector(".button-container").addEventListener("click", function(event) {
+    alert(`You Clicked ${event.target.innerText}`);
+});
