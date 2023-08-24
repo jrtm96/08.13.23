@@ -116,3 +116,109 @@
   width: 100px;
   height: 100px;
 }
+/*done w jstests */
+
+
+
+/* for Calculator */
+
+.calc-cont {
+  display: flex;
+  justify-content: center;
+
+}
+
+.calculator { 
+  display: grid;
+  height: 600px;
+  width: 400px;
+  grid-template-rows: [row1-start] 10% [row1-end row2-start] auto [row2-end];
+  grid-template-areas: 
+  "display   display   display   display"
+  "clear     clear     del       div"
+  "seven     eight     nine      multi"
+  "four      five      six       min"
+  "one       two       three     plus"
+  "zer       zer       zer       equ"
+ ;
+}
+button {
+  background-color: #d8d9db;
+  border: 1px solid black;
+  font-size: large;
+  color:black;
+}
+button:hover{
+  opacity: 80%;;
+}
+.col-orng {
+  background-color: #df974c;
+  color: white;
+}
+.display {
+  background-color: black;
+  grid-area: display;
+  direction: rtl;
+
+  text-align:justify;
+  font-size: 30pt;
+  height: auto;
+  width:auto;
+  margin: 0;
+  border: none;
+  padding: 10px;  
+  color: white;
+}
+
+.clear {
+  grid-area: clear;
+}
+.del {
+  grid-area: del;
+} 
+.div {
+  grid-area: div;
+
+}
+.seven {
+  grid-area: seven;
+}
+.eight {
+  grid-area: eight;
+}
+.nine {
+  grid-area: nine;
+}
+.multi {
+  grid-area: multi;
+}
+.four {
+  grid-area: four;
+}
+.five {
+  grid-area: five;
+}
+.six {
+  grid-area: six;
+}
+.min {
+  grid-area: min;
+}
+.one {
+  grid-area: one;
+}
+.two {
+  grid-area: two;
+}
+.three {
+  grid-area: three
+}
+.plus {
+  grid-area: plus;
+}
+.zer {
+  grid-area: zer;
+}
+.equ {
+  grid-area: equ;
+}

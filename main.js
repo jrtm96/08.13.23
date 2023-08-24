@@ -116,3 +116,58 @@ input.addEventListener("change", function(){
 document.querySelector(".button-container").addEventListener("click", function(event) {
     alert(`You Clicked ${event.target.innerText}`);
 });
+
+
+// calculator logic
+
+//select the display element and save it to a variable "display"
+const display = document.querySelector(".display");
+
+//add a click event listener to the calculator
+const calculatorBody = document.querySelector(".calculator");
+// calculator.addEventListener("click", function(event) {
+//     //check if the clicked element is a button so that the display is not clicked.
+//     if (event.target.tagName.toLowerCase() === 'button') //then
+//     {
+//         //append the buttons text to the display
+//         display.innerText += event.target.innerText;
+//     }
+// });
+
+//now i need to run create a way so that when "=" is pressed the equation on the display gets solved
+calculatorBody.addEventListener("click", function(event) {
+    //check if the clicked element is a button so that the display is not clicked.
+    if (event.target.tagName.toLowerCase() === 'button') //then
+    {
+        if (event.target.innerText === '=') //evaluate the expression in the display and evaluate the result
+        {
+            try {
+                display.innerText = eval(display.innerText.replace('x','*').replace('%', '/')); //evaluate, chaining
+            } catch (error) {
+                display.innerText = "error: " + error.message;
+            }
+        } else if (event.target.innerText === 'C'){
+            //clear the display
+            display.innerText = '_';
+        } else if (event.target.innerText === 'del') {
+            //remove the last character from the display
+            display.innerText = display.innerText.slice(0, -1);
+        // }else {
+        //     //append the buttons text to the display
+        //     display.innerText += event.target.innerText;
+        } else {
+            // If the display is '_' and the button pressed is a number
+            if (display.innerText === '_') {
+                // If it's a number other than '0', replace '0' with the number
+                if (!isNaN(event.target.innerText) && display !== '_') {
+                    display.innerText = event.target.innerText;
+                } else if (isNaN(event.target.innerText)) { // If it's not a number, append it
+                    display.innerText += event.target.innerText;
+                }
+                // If it's '0', do nothing
+            } else {
+                display.innerText += event.target.innerText;
+            }
+        }
+    }
+});
