@@ -151,6 +151,9 @@ button {
 button:hover{
   opacity: 80%;;
 }
+button:active {
+  opacity: 120%;
+}
 .col-orng {
   background-color: #df974c;
   color: white;
