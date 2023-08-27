@@ -225,3 +225,18 @@ button:active {
 .equ {
   grid-area: equ;
 }
+.normal-btn {
+  height:200px;
+  width:200px;
+}
+.doggo-cont {
+  margin-left:auto;
+  margin-right: auto;
+  height:600px;
+  width:600px;
+  overflow:scroll
+}
+img {
+  width:auto;
+  height:auto;
+}

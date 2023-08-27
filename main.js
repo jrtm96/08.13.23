@@ -20,7 +20,7 @@ const skyIsBlue = true;
 
 if (skyIsBlue) {
     console.log("The sky is blue!");
-}   else {
+} else {
     console.log("The sky is not blue!");
 }
 
@@ -32,7 +32,7 @@ const friends = 20;
 
 
 // while (friendsAtParty < 20) {
-    // friendsAtParty = friendsAtParty + 1;
+// friendsAtParty = friendsAtParty + 1;
 //    friendsAtParty++;
 //};
 console.log(friendsAtParty); // expect 20, logs 20
@@ -94,26 +94,26 @@ console.log(person.residence);
 
 const elementsToChange = document.querySelectorAll(".js-target");
 for (let i = 0; i < elementsToChange.length; i++) {
-  const currentElement = elementsToChange[i];
-  currentElement.innerText = "Modified by JavaScript!";
+    const currentElement = elementsToChange[i];
+    currentElement.innerText = "Modified by JavaScript!";
 };
 
 const button = document.querySelector(".event-button");
-button.addEventListener("click", function(){alert("Hey There!");});
+button.addEventListener("click", function () { alert("Hey There!"); });
 
 const input = document.querySelector(".input-to-copy");
 const paragraph = document.querySelector(".p-to-copy-to");
-input.addEventListener("keyup", function() {
+input.addEventListener("keyup", function () {
     paragraph.innerText = input.value;
 });
 
 const colInput = document.querySelector(".color-input");
 const colPara = document.querySelector(".color-box");
-input.addEventListener("change", function(){
+input.addEventListener("change", function () {
     colPara.style.backgroundColor = colInput.value;
 });
 
-document.querySelector(".button-container").addEventListener("click", function(event) {
+document.querySelector(".button-container").addEventListener("click", function (event) {
     alert(`You Clicked ${event.target.innerText}`);
 });
 
@@ -135,26 +135,26 @@ const calculatorBody = document.querySelector(".calculator");
 // });
 
 //now i need to run create a way so that when "=" is pressed the equation on the display gets solved
-calculatorBody.addEventListener("click", function(event) {
+calculatorBody.addEventListener("click", function (event) {
     //check if the clicked element is a button so that the display is not clicked.
     if (event.target.tagName.toLowerCase() === 'button') //then
     {
         if (event.target.innerText === '=') //evaluate the expression in the display and evaluate the result
         {
             try {
-                display.innerText = eval(display.innerText.replace('x','*').replace('%', '/')); //evaluate, chaining
+                display.innerText = eval(display.innerText.replace('x', '*').replace('%', '/')); //evaluate, chaining
             } catch (error) {
                 display.innerText = "error: " + error.message;
             }
-        } else if (event.target.innerText === 'C'){
+        } else if (event.target.innerText === 'C') {
             //clear the display
             display.innerText = '_';
         } else if (event.target.innerText === 'del') {
             //remove the last character from the display
             display.innerText = display.innerText.slice(0, -1);
-        // }else {
-        //     //append the buttons text to the display
-        //     display.innerText += event.target.innerText;
+            // }else {
+            //     //append the buttons text to the display
+            //     display.innerText += event.target.innerText;
         } else {
             // If the display is '_' and the button pressed is a number
             if (display.innerText === '_') {
@@ -171,3 +171,37 @@ calculatorBody.addEventListener("click", function(event) {
         }
     }
 });
+
+const dogsImagesAPIURL = "https://dog.ceo/api/breeds/image/random";
+
+const doggos = document.getElementById("dog-target");
+
+// function addNewDoggo() {
+//     const promise = fetch(dogsImagesAPIURL);
+//     promise.then(function (response) {
+//         const proccessingPromise = response.text();
+//         return proccessingPromise;
+//     })
+//         .then(function (proccessedResponse) {
+//             const dogObject = JSON.parse(proccessedResponse);
+//             const img = document.createElement("img");
+//             img.src = dogObject.message;
+//             img.alt = "Cute Dog";
+//             doggos.appendChild(img);
+//         }).catch(function (error) {
+//             // handle the error
+//             alert("error with API");
+//         });
+// }
+// document.getElementById("dog-btn").addEventListener("click", addNewDoggo)
+
+
+async function addNewDoggo() {
+    const promise =  await fetch(dogsImagesAPIURL);
+    const proccessedResponse = await promise.json();
+    const img = document.createElement("img");
+    img.src = proccessedResponse.message;
+    img.alt = "Cute Dog";
+    doggos.appendChild(img)
+}
+document.getElementById("dog-btn").addEventListener("click", addNewDoggo)
